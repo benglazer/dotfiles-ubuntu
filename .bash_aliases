@@ -23,6 +23,7 @@ alias gf='git fetch'
 alias gm='git merge'
 
 # apt
+alias apt-get='sudo apt-get'
 alias agi='apt-get install'
 alias agu='apt-get update'
 alias agup='apt-get upgrade'
