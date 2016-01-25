@@ -20,3 +20,7 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+### virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+source `which virtualenvwrapper.sh`
