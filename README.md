@@ -1,4 +1,8 @@
 dotfiles-ubuntu
 ===============
 
-My Ubuntu dotfiles
+My Ubuntu dotfiles.
+
+This structure is intended to be used with GNU Stow. If you're not already
+familiar, here's a simple, practical introduction by the author of the tool:
+http://codyreichert.github.io/blog/2015/07/07/managing-your-dotfiles-with-gnu-stow/
