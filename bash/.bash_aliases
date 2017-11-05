@@ -1,7 +1,7 @@
 # /bin & /usr/bin
-alias ls='ls -FG'
-alias ll='ls -l'
-alias lh='ls -lh'
+alias ls='ls -F --color'
+alias ll='ls -al'
+alias lh='ll -h'
 alias l='ls'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
