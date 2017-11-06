@@ -15,8 +15,8 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # Ensure all dependencies are installed
-sudo apt-get install git stow
-sudo apt-get install "linux-headers-$(uname -r)" build-essential dkms
+sudo apt-get install -y git stow
+sudo apt-get install -y "linux-headers-$(uname -r)" build-essential dkms
 
 # Pull down and install dotfiles
 git clone https://github.com/benglazer/dotfiles-ubuntu.git "$HOME/.dotfiles"
