@@ -38,15 +38,15 @@ echo Updating apt
 sudo apt-get update
 sudo apt-get upgrade
 
+echo Installing dotfiles
+install_dotfiles
+
 echo Ensuring all build dependencies are installed
 sudo apt-get install -y "linux-headers-$(uname -r)" build-essential dkms
 
 echo Installing new software
 source "$DOTFILES_ROOT/installers/pyenv.sh"
 source "$DOTFILES_ROOT/installers/virtualbox-guest-additions.sh"
-
-echo Installing dotfiles
-install_dotfiles
 
 echo Restoring original working dir
 popd > /dev/null
