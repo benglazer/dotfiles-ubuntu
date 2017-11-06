@@ -1,5 +1,7 @@
+#!/bin/bash
+
 # Use command-line param as version number, otherwise introspect
-version=${1:-$(VBoxClient --version | sed 's/r[0-9]\+//g')}
+version=$1
 if [ -z "$version" ]; then
     echo "Usage: install_virtualbox_guest_additions <VIRTUALBOX_VERSION>"
     return 1

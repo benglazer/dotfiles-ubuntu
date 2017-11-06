@@ -46,7 +46,6 @@ sudo apt-get install -y "linux-headers-$(uname -r)" build-essential dkms
 
 echo Installing new software
 source "$DOTFILES_ROOT/installers/pyenv.sh"
-source "$DOTFILES_ROOT/installers/virtualbox-guest-additions.sh"
 
 echo Restoring original working dir
 popd > /dev/null
