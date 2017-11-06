@@ -31,12 +31,8 @@ install_dotfiles() {
     stow bash git vim
 }
 
-echo Patching mdadm.conf
-grep "ARRAY devices" /etc/mdadm/mdadm.conf >/dev/null || echo "ARRAY devices=/dev/sda" | sudo -A tee -a /etc/mdadm/mdadm.conf >/dev/null;
-
 echo Updating apt
 sudo apt-get update
-sudo apt-get upgrade
 
 echo Installing dotfiles
 install_dotfiles
