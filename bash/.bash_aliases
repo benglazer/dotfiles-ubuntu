@@ -30,3 +30,6 @@ alias agup='apt-get upgrade'
 alias acs='apt-cache search'
 alias acsh='apt-cache show'
 alias agrm='apt-get remove'
+
+# docker
+alias docker='sudo docker'
