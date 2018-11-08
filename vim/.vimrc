@@ -1,5 +1,6 @@
 " Colors
 syntax enable  " enable syntax processing
+set background=dark
 
 " Spaces & tabs
 set tabstop=4       " number of visual spaces per TAB
