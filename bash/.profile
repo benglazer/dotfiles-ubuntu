@@ -24,3 +24,4 @@ fi
 # load extensions
 source "$HOME/.profile-extensions/pyenv.sh"
 source "$HOME/.profile-extensions/go.sh"
+source "$HOME/.profile-extensions/ssh-agent.sh"
