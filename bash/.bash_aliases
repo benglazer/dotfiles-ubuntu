@@ -22,6 +22,7 @@ alias gco='git checkout'
 alias gbr='git branch'
 alias gf='git fetch --prune'
 alias gm='git merge'
+alias gg='git grep'
 
 # apt
 alias apt-get='sudo apt-get'
