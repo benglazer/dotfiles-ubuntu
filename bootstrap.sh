@@ -10,14 +10,8 @@ DOTFILES_ROOT="$HOME/.dotfiles"
 DOTFILES_BACKUP_DIR="$HOME/dotfiles-orig"
 DOTFILES_REPO="https://github.com/benglazer/dotfiles-ubuntu.git"
 
-# Store original working dir
-pushd . > /dev/null
-
-# Useful system variables
-release_name=$(lsb_release -c | awk '{print $2}')
-
-
 install_dotfiles() {
+    echo "Installing dotfiles"
     sudo apt-get install -y git stow
 
     echo -e "\tBacking up default dotfiles (and getting them out of stow's way)"
@@ -33,20 +27,11 @@ install_dotfiles() {
     stow bash git vim
 }
 
-echo Updating apt
-sudo apt-get update
+pushd . > /dev/null
 
-echo Installing dotfiles
+sudo apt-get update && apt-get install -y git stow "linux-headers-$(uname -r)" build-essential dkms
 install_dotfiles
-
-echo Ensuring all build dependencies are installed
-sudo apt-get install -y "linux-headers-$(uname -r)" build-essential dkms
-
-echo Installing new software
 source "$DOTFILES_ROOT/installers/pyenv.sh"
 
-echo Restoring original working dir
 popd > /dev/null
-
-echo Bootstrap complete. You may reboot the VM to verify everything is
-echo working as expected.
+echo Bootstrap complete. Reboot to verify everything is working as expected.
