@@ -9,6 +9,5 @@ http://codyreichert.github.io/blog/2015/07/07/managing-your-dotfiles-with-gnu-st
 
 Install via:
 
-    sudo apt-get update
-    sudo apt-get install -y curl
+    sudo apt-get update && apt-get install -y bash curl
     curl -L https://raw.githubusercontent.com/benglazer/dotfiles-ubuntu/master/bootstrap.sh | bash
