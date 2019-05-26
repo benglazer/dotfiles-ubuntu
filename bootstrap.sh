@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 # Install ubuntu-dotfiles on a new server.
 # Assumes nothing more than apt-get is properly installed.
