@@ -11,20 +11,20 @@ DOTFILES_REPO="https://github.com/benglazer/dotfiles-ubuntu.git"
 
 install_dotfiles() {
     echo "Installing dotfiles"
-    sudo apt-get install -y git stow
-
-    echo -e "\tPulling down dotfiles repo"
+    sudo apt-get install -y git stow vim
     git clone "$DOTFILES_REPO" "$DOTFILES_ROOT"
 
-    echo -e "\tInstalling dotfiles via stow"
+    echo "Installing dotfiles via stow..."
     mkdir -pv "$DOTFILES_ROOT"
     cd "$DOTFILES_ROOT"
     stow bash git vim
+
+    echo "Dotfiles successfully installed"
 }
 
 pushd . > /dev/null
 
-sudo apt-get update && apt-get install -y git stow "linux-headers-$(uname -r)" build-essential dkms
+sudo apt-get update && apt-get install -y "linux-headers-$(uname -r)" build-essential dkms
 install_dotfiles
 source "$DOTFILES_ROOT/installers/pyenv.sh"
 
