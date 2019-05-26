@@ -7,7 +7,7 @@ IFS=$'\n\t'
 
 # Configuration
 DOTFILES_ROOT="$HOME/.dotfiles"
-DOTFILES_ORIG_DIR="$HOME/dotfiles-orig"
+DOTFILES_BACKUP_DIR="$HOME/dotfiles-orig"
 DOTFILES_REPO="https://github.com/benglazer/dotfiles-ubuntu.git"
 
 # Store original working dir
@@ -21,8 +21,8 @@ install_dotfiles() {
     sudo apt-get install -y git stow
 
     echo -e "\tBacking up default dotfiles (and getting them out of stow's way)"
-    mkdir -pv "$DOTFILES_ORIG_DIR"
-    mv -iv .bash_logout .bashrc .profile "$DOTFILES_ORIG_DIR"
+    mkdir -pv "$DOTFILES_BACKUP_DIR"
+    mv -iv .bash_logout .bashrc .profile "$DOTFILES_BACKUP_DIR"
 
     echo -e "\tPulling down dotfiles repo"
     git clone "$DOTFILES_REPO" "$DOTFILES_ROOT"
