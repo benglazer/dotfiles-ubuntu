@@ -21,7 +21,7 @@ backup_dotfiles() {
         cd "${dotfile_group}"
         for relative_dotfile_path in $(find . -type f) ; do
             if [[ -x "${HOME}/${relative_dotfile_path}" ]] ; then
-                echo mkdir -pv "$("${DOTFILES_BACKUP}/${dotfile_group}/${relative_dotfile_path}")"
+                echo mkdir -pv "$(dirname "${DOTFILES_BACKUP}/${dotfile_group}/${relative_dotfile_path}")"
                 echo mv -v "${HOME}/${relative_dotfile_path}" \
                            "${DOTFILES_BACKUP}/${dotfile_group}/${relative_dotfile_path}"
             fi
