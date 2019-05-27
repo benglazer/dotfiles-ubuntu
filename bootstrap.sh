@@ -2,6 +2,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+set -x  # debug
+
 # Install ubuntu-dotfiles on a new server.
 # Assumes nothing more than apt-get is properly installed.
 
