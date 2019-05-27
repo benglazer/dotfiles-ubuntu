@@ -11,13 +11,13 @@ set -x  # debug
 DOTFILES_ROOT="${HOME}/.dotfiles"
 DOTFILES_REPO="https://github.com/benglazer/dotfiles-ubuntu.git"
 DOTFILES_BACKUP="${HOME}/.dotfiles-backup"
-STOW_GROUPS_TO_INSTALL="bash git vim"
+STOW_GROUPS_TO_INSTALL=(bash git vim)
 
 backup_dotfiles() {
     echo "Backing up dotfiles"
     pushd . > /dev/null
     cd "${DOTFILES_ROOT}"
-    for dotfile_group in ${STOW_GROUPS_TO_INSTALL}; do
+    for dotfile_group in "${STOW_GROUPS_TO_INSTALL[@]}" ; do
         cd "${dotfile_group}"
         for relative_dotfile_path in $(find . -type f) ; do
             if [[ -x "${HOME}/${relative_dotfile_path}" ]] ; then
@@ -41,7 +41,7 @@ install_dotfiles() {
     echo "Installing dotfiles via stow..."
     mkdir -pv "${DOTFILES_ROOT}"
     cd "${DOTFILES_ROOT}"
-    stow ${STOW_GROUPS_TO_INSTALL}
+    stow "${STOW_GROUPS_TO_INSTALL[@]}"
 
     echo "Dotfiles successfully installed"
 }
