@@ -1,9 +1,13 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
-if [ -x ~/.pyenv/libexec/pyenv ]; then
+if [[ -x ~/.pyenv/libexec/pyenv ]]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
+    set +u
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
+    set -u
 fi
 
 # Custom functions
@@ -21,6 +25,6 @@ latest_python3_stable() {
 }
 
 mkvenvhere() {
-    envname=${1:-$(basename $(pwd))}
-    (pyenv virtualenv $(latest_python3_stable) $envname) && (echo $envname > .python-version)
+    env_name=${1:-$(basename $(pwd))}
+    (pyenv virtualenv $(latest_python3_stable) "$env_name") && (echo "$env_name" > .python-version)
 }
