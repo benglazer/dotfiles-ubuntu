@@ -50,4 +50,4 @@ alias api='cd ${HOME}/dev/eduvant/eduvant_platform'
 alias sw='cd ${HOME}/dev/personal/southwest'
 
 # Useful system variables
-alias release_name=$(lsb_release -c | awk '{print \$2}')
+alias release_name=$(lsb_release -c | awk '{print $2}')
